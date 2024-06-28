@@ -1,5 +1,3 @@
-
-
 /*
 Exercise 1: Define an empty array
 
@@ -8,9 +6,10 @@ Exercise 1: Define an empty array
 Exercise 1 has been completed for you:
 */
 
-const foods = [];  
+const foods =  [];  
 
 console.log('Exercise 1 result:', foods);
+
 /*
 Exercise 2: Add strings to the array
 
@@ -24,7 +23,8 @@ Complete Exercise 2 in the space below:
 
 foods.push('pizza', 'cheeseburger')
 
-console.log('Exercise 2 result:', foods);
+console.log('Exercise 2 result:', foods)
+
 /*
 Exercise 3: Insert at the beginning
 
@@ -32,11 +32,12 @@ Exercise 3: Insert at the beginning
 
 Complete Exercise 3 in the space below:
 */
+
 foods.unshift('taco')
 
 
+console.log('Exercise 3 result:', foods);
 
-console.log(foods)
 /*
 Exercise 4: Access an array element
 
@@ -47,16 +48,9 @@ Exercise 4: Access an array element
 
 Complete Exercise 4 in the space below:
 */
- const soyIdx= foods.indexOf(tofu);
+const favFood = foods[1]
 
-console.log(soyIdx)
-
-
-   // splice(start)
-// splice(start, deleteCount)
-// splice(start, deleteCount, item0)
-// splice(start, deleteCount, item0, item1)
-// splice(start, deleteCount, item0, item1, /* …, */ itemN)
+console.log('Exercise 4 result:', favFood);
 /*
 Exercise 5: Insert an element between two others
 
@@ -64,9 +58,10 @@ Exercise 5: Insert an element between two others
 
 Complete Exercise 5 in the space below:
 */
+
 const removed = foods.splice(2,0,"tofu")
 
-console.log(foods)
+console.log('Exercise 5 result:', foods);
 
 /*
 Exercise 6: Replace elements
@@ -75,11 +70,10 @@ Exercise 6: Replace elements
 
 Complete Exercise 6 in the space below:
 */
- foods.splice(1,1, "sushi","cupcake")
 
+foods.splice(1,1, "sushi","cupcake")
 
-
-console.log(foods);
+console.log('Exercise 6 result:', foods);
 
 /*
 Exercise 7: Using the `slice()` method
@@ -95,6 +89,9 @@ Complete Exercise 7 in the space below:
 const yummy = foods.slice(1,2);
 console.log(yummy)
 
+
+console.log('Exercise 7 result:', yummy);
+
 /*
 Exercise 8: Finding an index
 
@@ -105,50 +102,60 @@ Exercise 8: Finding an index
 
 Complete Exercise 8 in the space below:
 */
-const soyIdx= foods.indexOf(tofu)
+const soyIdx= foods.indexOf('tofu');
 
 console.log('Exercise 8 result:', soyIdx);
-// Complete Exercise 8 below...
-const soyIdx= foods.indexOf(tofu);
-
-console.log('Exercise 8 Result:
-', soyIdx);
-
 /*
-Exercise 9:
-  - Assign to a variable named allFoods the result of joining the strings in the foods array such that the result is the following single string:
-    'taco -> sushi -> cupcake -> tofu -> cheeseburger'
+Exercise 9: Joining elements
+
+1) Use the `join()` method to concatenate the strings in the `foods` array, 
+   separated by ' -> '. 
+
+2) Assign the result to a variable called `allFoods`. 
+
+Note: The final result should log as:
+'taco -> sushi -> cupcake -> tofu -> cheeseburger'
+
+Complete Exercise 9 in the space below:
 */
 
-// Complete Exercise 9 below...
-const allFoods= taco  + - sushi  + - cupcake  + - tofu  + - cheeseburger;
+const allFoods = foods.join(' -> ');
 
 
-
-console.log('Exercise 9 Result:
-', allFoods);
+console.log('Exercise 9 result:', allFoods);
 
 /*
-Exercise 10:
-  - Assign a boolean to a variable named hasSoup depending upon whether or not the foods array includes the string 'soup'.
+Exercise 10: Check for an element
+
+1) Using the .includes() method, check if the `foods` array contains the string
+   'soup'.
+
+2) Assign the result to a variable called `hasSoup``.
+
+Complete Exercise 10 in the space below:
 */
 
-// Complete Exercise 10 below...
 
-const hasSoup=foods.includes(soup, 0);
+// const hasSoup = foods.includes(soup, 0);
+const hasSoup = foods.includes('soup');
 
-console.log('Exercise 10 Result:
-', hasSoup);
+
+console.log('Exercise 10 result:', hasSoup);
 
 /*
-Exercise 11:
-  - Use the forEach method to iterate through the provided nums array and add each odd number to a new array named odds.
-  - Hint: Initialize the odds variable to an empty array before the iteration.
+Exercise 11: Odd numbers from an array
+
+1) Choose a method to iterate through the `nums` array.
+
+2) Push each odd number to a new array named `odds`.
+
+Hint: Initialize the `odds` variable to an empty array before the iteration.
+
+Complete Exercise 11 in the space below:
 */
 
 const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 
-// Complete Exercise 11 below..
 let odds= [];
 function oddNumbers(value) {
             if ( value % 2 === 1 ) {
@@ -157,47 +164,65 @@ function oddNumbers(value) {
         }
          nums.forEach(oddNumbers);
 
-console.log('Exercise 11 Result:
-', odds);
+
+
+console.log('Exercise 11 result:', odds);
 
 /*
-Exercise 12:
-  - Use the forEach method to iterate through the same nums array and add the number to arrays named fizz, buzz and/or fizzbuzz based upon the following:
-  	- Add to the fizz array if the number is evenly divisible by 3.
-  	- Add to the buzz array if the number is evenly divisible by 5.
-  	- Add to the fizzbuzz array if the number is evenly divisible by 3 & 5.
-*/
+Exercise 12: FizzBuzz with arrays
 
-// Complete Exercise 12 below...
+1) Choose a method to iterate through the `nums` array. 
+
+2. As you loop, sort the numbers into new arrays based on the following rules:
+
+   - Push any number evenly divisible by 3 to an array called `fizz`.
+   - Push any number evenly divisible by 5 to an array called `buzz`.
+   - Push any number that is evenly divisible by 3 and 5 to an array called
+     `fizzbuzz`.
+
+   Note: A single number may meet more than one of the above rules. If it does,
+         it should be placed in multiple arrays. For example, the number `15`
+         will appear in the `fizz`, `buzz`, and `fizzbuzz` arrays.
+
+Complete Exercise 12 in the space below:
+*/
 let fizz= []
 let buzz=[]
 let fizzbuzz=[]
 
-function fizzy (value){
-  if (value % 3 === 0){
-    fizz.push(value)
+
+nums.forEach(num => {
+
+  if (num % 3 === 0) {
+      fizz.push(num);
   }
-  else{
-    if (value % 5 === 0){
-      buzz.push(value);
-    } else{
-      if (value % 3=== 0 && value % 5 === 0){
-        fizzbuzz.push(value)
-      }
-    }
+  
+  if (num % 5 === 0) {
+      buzz.push(num);
   }
-}
-nums.forEach(fizzy)
+ 
+  if (num % 3 === 0 && num % 5 === 0) {
+      fizzbuzz.push(num);
+  }
+});
+
 
 console.log('Exercise 12 Results:');
 console.log('  fizz:', fizz);
 console.log('  buzz:', buzz);
 console.log('  fizzbuzz:', fizzbuzz);
 
+
 /*
-Exercise 13:
-  - Given the below numArrays array of arrays (two-dimensional array), assign the last nested array to a variable named numList.
-  - Assume you don't know how many nested arrays numArrays contains.
+Exercise 13: Retrieve the Last Array
+
+1) Assign the last nested array in the `numArrays` below to a variable named
+   `numList`. As you do this, also fulfill these goals:
+
+   - Assume you don't know how many nested arrays `numArrays` contains.
+   - Do not alter the original `numArrays` array.
+
+Complete Exercise 13 in the space below:
 */
 
 const numArrays = [
@@ -207,647 +232,45 @@ const numArrays = [
 	[7, 81, 90]
 ];
 
-// Complete Exercise 13 below...
 let numList=[]
 numList= numArrays[numArrays.length-1];
 // to return the last nested array. 
 
-console.log('Exercise 13 Result:
-', numList);
+console.log('Exercise 13 result:', numList);
 
 /*
-Exercise 14:
-  - Given the above numArrays array, access the number 66 and assign to a variable named num.
-*/
+Exercise 14: Accessing within nested arrays
 
-// Complete Exercise 14 below...
+1) Retrieve the number `66` from the `numArrays` array. As part of this process
+   do not alter the original `numArrays` array.
+
+2) Assign it to a variable called `num`.
+
+Complete Exercise 14 in the space below:
+*/
 let num= numArrays[2][1];
-console.log('Exercise 14 Result:
-', num);
 
+console.log('Exercise 14 result:', num);
 /*
-Exercise 15:
-  - Given the above numArrays array, use nested forEach methods to sum up all the numbers contained within numArrays and assign to a variable named total.
-  - Hint: Be sure to declare and initialize the total variable before the iterations.
+Exercise 15: Nested array sum
+
+1) Use nested loops or `forEach()` methods to sum up all numbers within 
+   `numArrays` nested arrays.
+   
+2) Assign the sum to a variable called `total`.
+
+Hint: Be sure to declare and initialize the total variable before the iterations.
+
+Complete Exercise 15 in the space below:
 */
+let total = 0;
 
-// Complete Exercise 15 below..
-// I tried all day and couldn't figure out how to create a recursive funtion that works. 
+// Use nested forEach methods to sum up all numbers within numArrays
+numArrays.forEach(innerArray => {
+    innerArray.forEach(num => {
+        total += num;
+    });
+});
 
-let total =0;
 
-// first got all the items in the nested array into a 
- let flattenedArray= numArrays.flat();
- flattenedArray.forEach(myFunction);
-
-function myFunction(item) {
-  total += item;
-}
-
-
-console.log('Exercise 15 Result:
-', total); 
- 229 changes: 229 additions & 0 deletions229  
-+
-Original file line number	Diff line number	Diff line change
-@@ -0,0 +1,229 @@
-/*
-Exercise 1:
-  - Define an empty array named foods
-*/
-
-// Exercise 1 has been completed for you...
-
-const foods = [];
-
-console.log('Exercise 1 Result:
-', foods);
-
-/*
-Exercise 2:
-  - Add the strings 'pizza' & 'cheeseburger' to the foods array such that 'pizza' comes before 'cheeseburger'.
-*/
-
-// Complete Exercise 2 below...
-
-foods.push(pizza);
-foods.push(cheeseburger);
-
-
-console.log('Exercise 2 Result:
-',  foods);
-
-/*
-Exercise 3:
-  - Add the string 'taco' to the foods array so that 'taco' is the first food in the array.
-*/
-
-// Complete Exercise 3 below...
-
-foods.unshift(taco);
-
-console.log('Exercise 3 Result:
-', foods);
-
-/*
-Exercise 4:
-  - Access the string 'pizza' (based upon its known position) in the foods array and assign to a variable named favFood.
-*/
-
-// Complete Exercise 4 below...
-var favFood= foods.indexOf(pizza);
-
-console.log('Exercise 4 Result:
-', favFood);
-
-/*
-Exercise 5:
-  - Insert the string 'tofu' in the foods array between 'pizza' & 'cheeseburger'
-*/
-
-// Complete Exercise 5 below...
-foods.splice(2,0, tofu)
-
-console.log('Exercise 5 Result:
-', foods);
-
-/*
-Exercise 6:
-  - Replace the string 'pizza' in the foods array with the strings 'sushi' & 'cupcake'.
-*/
-
-// Complete Exercise 6 below...
-
-foods.splice(1, 1, sushi, cupcake)
-
-console.log('Exercise 6 Result:
-', foods);
-
-/*
-Exercise 7:
-  - Use the slice method on the foods array to create a new array containing 'sushi' & 'cupcake'.
-  - Assign the new array to a variable named yummy.
-*/
-
-// Complete Exercise 7 below...
-const yummy= foods.slice(1,3);
-
-
-console.log('Exercise 7 Result:
-', yummy);
-
-/*
-Exercise 8:
-  - Using the indexOf method on the foods array, assign the index of the 'tofu' string to a variable named soyIdx.
-*/
-
-// Complete Exercise 8 below...
-const soyIdx= foods.indexOf(tofu);
-
-console.log('Exercise 8 Result:
-', soyIdx);
-
-/*
-Exercise 9:
-  - Assign to a variable named allFoods the result of joining the strings in the foods array such that the result is the following single string:
-    'taco -> sushi -> cupcake -> tofu -> cheeseburger'
-*/
-
-// Complete Exercise 9 below...
-const allFoods= taco  + - sushi  + - cupcake  + - tofu  + - cheeseburger;
-
-
-
-console.log('Exercise 9 Result:
-', allFoods);
-
-/*
-Exercise 10:
-  - Assign a boolean to a variable named hasSoup depending upon whether or not the foods array includes the string 'soup'.
-*/
-
-// Complete Exercise 10 below...
-
-const hasSoup=foods.includes(soup, 0);
-
-console.log('Exercise 10 Result:
-', hasSoup);
-
-/*
-Exercise 11:
-  - Use the forEach method to iterate through the provided nums array and add each odd number to a new array named odds.
-  - Hint: Initialize the odds variable to an empty array before the iteration.
-*/
-
-const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
-
-// Complete Exercise 11 below..
-let odds= [];
-function oddNumbers(value) {
-            if ( value % 2 === 1 ) {
-                odds.push(value);
-            }
-        }
-         nums.forEach(oddNumbers);
-
-console.log('Exercise 11 Result:
-', odds);
-
-/*
-Exercise 12:
-  - Use the forEach method to iterate through the same nums array and add the number to arrays named fizz, buzz and/or fizzbuzz based upon the following:
-  	- Add to the fizz array if the number is evenly divisible by 3.
-  	- Add to the buzz array if the number is evenly divisible by 5.
-  	- Add to the fizzbuzz array if the number is evenly divisible by 3 & 5.
-*/
-
-// Complete Exercise 12 below...
-let fizz= []
-let buzz=[]
-let fizzbuzz=[]
-
-function fizzy (value){
-  if (value % 3 === 0){
-    fizz.push(value)
-  }
-  else{
-    if (value % 5 === 0){
-      buzz.push(value);
-    } else{
-      if (value % 3=== 0 && value % 5 === 0){
-        fizzbuzz.push(value)
-      }
-    }
-  }
-}
-nums.forEach(fizzy)
-
-console.log('Exercise 12 Results:');
-console.log('  fizz:', fizz);
-console.log('  buzz:', buzz);
-console.log('  fizzbuzz:', fizzbuzz);
-
-/*
-Exercise 13:
-  - Given the below numArrays array of arrays (two-dimensional array), assign the last nested array to a variable named numList.
-  - Assume you don't know how many nested arrays numArrays contains.
-*/
-
-const numArrays = [
-	[100, 5, 23],
-	[15, 21, 72, 9],
-	[45, 66],
-	[7, 81, 90]
-];
-
-// Complete Exercise 13 below...
-let numList=[]
-numList= numArrays[numArrays.length-1];
-// to return the last nested array. 
-
-console.log('Exercise 13 Result:
-', numList);
-
-/*
-Exercise 14:
-  - Given the above numArrays array, access the number 66 and assign to a variable named num.
-*/
-
-// Complete Exercise 14 below...
-let num= numArrays[2][1];
-console.log('Exercise 14 Result:
-', num);
-
-/*
-Exercise 15:
-  - Given the above numArrays array, use nested forEach methods to sum up all the numbers contained within numArrays and assign to a variable named total.
-  - Hint: Be sure to declare and initialize the total variable before the iterations.
-*/
-
-// Complete Exercise 15 below..
-// I tried all day and couldn't figure out how to create a recursive funtion that works. 
-
-let total =0;
-
-// first got all the items in the nested array into a 
- let flatte// Complete Exercise 8 below...
- const soyIdx= foods.indexOf(tofu);
- 
- console.log('Exercise 8 Result:
- ', soyIdx);
- 
- /*
- Exercise 9:
-   - Assign to a variable named allFoods the result of joining the strings in the foods array such that the result is the following single string:
-     'taco -> sushi -> cupcake -> tofu -> cheeseburger'
- */
- 
- // Complete Exercise 9 below...
- const allFoods= taco  + - sushi  + - cupcake  + - tofu  + - cheeseburger;
- 
- 
- 
- console.log('Exercise 9 Result:
- ', allFoods);
- 
- /*
- Exercise 10:
-   - Assign a boolean to a variable named hasSoup depending upon whether or not the foods array includes the string 'soup'.
- */
- 
- // Complete Exercise 10 below...
- 
- const hasSoup=foods.includes(soup, 0);
- 
- console.log('Exercise 10 Result:
- ', hasSoup);
- 
- /*
- Exercise 11:
-   - Use the forEach method to iterate through the provided nums array and add each odd number to a new array named odds.
-   - Hint: Initialize the odds variable to an empty array before the iteration.
- */
- 
- const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
- 
- // Complete Exercise 11 below..
- let odds= [];
- function oddNumbers(value) {
-             if ( value % 2 === 1 ) {
-                 odds.push(value);
-             }
-         }
-          nums.forEach(oddNumbers);
- 
- console.log('Exercise 11 Result:
- ', odds);
- 
- /*
- Exercise 12:
-   - Use the forEach method to iterate through the same nums array and add the number to arrays named fizz, buzz and/or fizzbuzz based upon the following:
-      - Add to the fizz array if the number is evenly divisible by 3.
-      - Add to the buzz array if the number is evenly divisible by 5.
-      - Add to the fizzbuzz array if the number is evenly divisible by 3 & 5.
- */
- 
- // Complete Exercise 12 below...
- let fizz= []
- let buzz=[]
- let fizzbuzz=[]
- 
- function fizzy (value){
-   if (value % 3 === 0){
-     fizz.push(value)
-   }
-   else{
-     if (value % 5 === 0){
-       buzz.push(value);
-     } else{
-       if (value % 3=== 0 && value % 5 === 0){
-         fizzbuzz.push(value)
-       }
-     }
-   }
- }
- nums.forEach(fizzy)
- 
- console.log('Exercise 12 Results:');
- console.log('  fizz:', fizz);
- console.log('  buzz:', buzz);
- console.log('  fizzbuzz:', fizzbuzz);
- 
- /*
- Exercise 13:
-   - Given the below numArrays array of arrays (two-dimensional array), assign the last nested array to a variable named numList.
-   - Assume you don't know how many nested arrays numArrays contains.
- */
- 
- const numArrays = [
-    [100, 5, 23],
-    [15, 21, 72, 9],
-    [45, 66],
-    [7, 81, 90]
- ];
- 
- // Complete Exercise 13 below...
- let numList=[]
- numList= numArrays[numArrays.length-1];
- // to return the last nested array. 
- 
- console.log('Exercise 13 Result:
- ', numList);
- 
- /*
- Exercise 14:
-   - Given the above numArrays array, access the number 66 and assign to a variable named num.
- */
- 
- // Complete Exercise 14 below...
- let num= numArrays[2][1];
- console.log('Exercise 14 Result:
- ', num);
- 
- /*
- Exercise 15:
-   - Given the above numArrays array, use nested forEach methods to sum up all the numbers contained within numArrays and assign to a variable named total.
-   - Hint: Be sure to declare and initialize the total variable before the iterations.
- */
- 
- // Complete Exercise 15 below..
- // I tried all day and couldn't figure out how to create a recursive funtion that works. 
- 
- let total =0;
- 
- // first got all the items in the nested array into a 
-  let flattenedArray= numArrays.flat();
-  flattenedArray.forEach(myFunction);
- 
- function myFunction(item) {
-   total += item;
- }
- 
- 
- console.log('Exercise 15 Result:
- ', total); 
-  229 changes: 229 additions & 0 deletions229  
- +
- Original file line number	Diff line number	Diff line change
- @@ -0,0 +1,229 @@
- /*
- Exercise 1:
-   - Define an empty array named foods
- */
- 
- // Exercise 1 has been completed for you...
- 
- const foods = [];
- 
- console.log('Exercise 1 Result:
- ', foods);
- 
- /*
- Exercise 2:
-   - Add the strings 'pizza' & 'cheeseburger' to the foods array such that 'pizza' comes before 'cheeseburger'.
- */
- 
- // Complete Exercise 2 below...
- 
- foods.push(pizza);
- foods.push(cheeseburger);
- 
- 
- console.log('Exercise 2 Result:
- ',  foods);
- 
- /*
- Exercise 3:
-   - Add the string 'taco' to the foods array so that 'taco' is the first food in the array.
- */
- 
- // Complete Exercise 3 below...
- 
- foods.unshift(taco);
- 
- console.log('Exercise 3 Result:
- ', foods);
- 
- /*
- Exercise 4:
-   - Access the string 'pizza' (based upon its known position) in the foods array and assign to a variable named favFood.
- */
- 
- // Complete Exercise 4 below...
- var favFood= foods.indexOf(pizza);
- 
- console.log('Exercise 4 Result:
- ', favFood);
- 
- /*
- Exercise 5:
-   - Insert the string 'tofu' in the foods array between 'pizza' & 'cheeseburger'
- */
- 
- // Complete Exercise 5 below...
- foods.splice(2,0, tofu)
- 
- console.log('Exercise 5 Result:
- ', foods);
- 
- /*
- Exercise 6:
-   - Replace the string 'pizza' in the foods array with the strings 'sushi' & 'cupcake'.
- */
- 
- // Complete Exercise 6 below...
- 
- foods.splice(1, 1, sushi, cupcake)
- 
- console.log('Exercise 6 Result:
- ', foods);
- 
- /*
- Exercise 7:
-   - Use the slice method on the foods array to create a new array containing 'sushi' & 'cupcake'.
-   - Assign the new array to a variable named yummy.
- */
- 
- // Complete Exercise 7 below...
- const yummy= foods.slice(1,3);
- 
- 
- console.log('Exercise 7 Result:
- ', yummy);
- 
- /*
- Exercise 8:
-   - Using the indexOf method on the foods array, assign the index of the 'tofu' string to a variable named soyIdx.
- */
- 
- // Complete Exercise 8 below...
- const soyIdx= foods.indexOf(tofu);
- 
- console.log('Exercise 8 Result:
- ', soyIdx);
- 
- /*
- Exercise 9:
-   - Assign to a variable named allFoods the result of joining the strings in the foods array such that the result is the following single string:
-     'taco -> sushi -> cupcake -> tofu -> cheeseburger'
- */
- 
- // Complete Exercise 9 below...
- const allFoods= taco  + - sushi  + - cupcake  + - tofu  + - cheeseburger;
- 
- 
- 
- console.log('Exercise 9 Result:
- ', allFoods);
- 
- /*
- Exercise 10:
-   - Assign a boolean to a variable named hasSoup depending upon whether or not the foods array includes the string 'soup'.
- */
- 
- // Complete Exercise 10 below...
- 
- const hasSoup=foods.includes(soup, 0);
- 
- console.log('Exercise 10 Result:
- ', hasSoup);
- 
- /*
- Exercise 11:
-   - Use the forEach method to iterate through the provided nums array and add each odd number to a new array named odds.
-   - Hint: Initialize the odds variable to an empty array before the iteration.
- */
- 
- const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
- 
- // Complete Exercise 11 below..
- let odds= [];
- function oddNumbers(value) {
-             if ( value % 2 === 1 ) {
-                 odds.push(value);
-             }
-         }
-          nums.forEach(oddNumbers);
- 
- console.log('Exercise 11 Result:
- ', odds);
- 
- /*
- Exercise 12:
-   - Use the forEach method to iterate through the same nums array and add the number to arrays named fizz, buzz and/or fizzbuzz based upon the following:
-      - Add to the fizz array if the number is evenly divisible by 3.
-      - Add to the buzz array if the number is evenly divisible by 5.
-      - Add to the fizzbuzz array if the number is evenly divisible by 3 & 5.
- */
- 
- // Complete Exercise 12 below...
- let fizz= []
- let buzz=[]
- let fizzbuzz=[]
- 
- function fizzy (value){
-   if (value % 3 === 0){
-     fizz.push(value)
-   }
-   else{
-     if (value % 5 === 0){
-       buzz.push(value);
-     } else{
-       if (value % 3=== 0 && value % 5 === 0){
-         fizzbuzz.push(value)
-       }
-     }
-   }
- }
- nums.forEach(fizzy)
- 
- console.log('Exercise 12 Results:');
- console.log('  fizz:', fizz);
- console.log('  buzz:', buzz);
- console.log('  fizzbuzz:', fizzbuzz);
- 
- /*
- Exercise 13:
-   - Given the below numArrays array of arrays (two-dimensional array), assign the last nested array to a variable named numList.
-   - Assume you don't know how many nested arrays numArrays contains.
- */
- 
- const numArrays = [
-    [100, 5, 23],
-    [15, 21, 72, 9],
-    [45, 66],
-    [7, 81, 90]
- ];
- 
- // Complete Exercise 13 below...
- let numList=[]
- numList= numArrays[numArrays.length-1];
- // to return the last nested array. 
- 
- console.log('Exercise 13 Result:
- ', numList);
- 
- /*
- Exercise 14:
-   - Given the above numArrays array, access the number 66 and assign to a variable named num.
- */
- 
- // Complete Exercise 14 below...
- let num= numArrays[2][1];
- console.log('Exercise 14 Result:
- ', num);
- 
- /*
- Exercise 15:
-   - Given the above numArrays array, use nested forEach methods to sum up all the numbers contained within numArrays and assign to a variable named total.
-   - Hint: Be sure to declare and initialize the total variable before the iterations.
- */
- 
- // Complete Exercise 15 below..
- // I tried all day and couldn't figure out how to create a recursive funtion that works. 
- 
- let total =0;
- 
- // first got all the items in the nested array into a 
-  let flattenedArray= numArrays.flat();
-  flattenedArray.forEach(myFunction);
- 
- function myFunction(item) {
-   total += item;
- }
- 
- 
- console.log('Exercise 15 Result:
- ', total); nedArray= numArrays.flat();
- flattenedArray.forEach(myFunction);
-
-function myFunction(item) {
-  total += item;
-}
-
-
-console.log('Exercise 15 Result:
-', total); 
+console.log('Exercise 15 result:\n', total);
